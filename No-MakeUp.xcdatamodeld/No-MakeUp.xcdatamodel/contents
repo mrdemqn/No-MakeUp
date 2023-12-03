@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22222" systemVersion="23A344" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Client" representedClassName=".Client" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="instagram" optional="YES" attributeType="String"/>
+        <attribute name="makeUpAppointmentDate" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="makeUpAppointmentTime" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <relationship name="notifications" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Notification"/>
+    </entity>
+    <entity name="Notification" representedClassName=".Notification" syncable="YES">
+        <attribute name="body" attributeType="String" defaultValueString="У вас скоро будет макияж!"/>
+        <attribute name="notificationTypeRawValue" optional="YES" attributeType="Integer 16" valueTransformerName="NSSecureUnarchiveFromDataTransformer" defaultValueString="0" usesScalarValueType="YES" customClassName="NotificationType"/>
+        <attribute name="title" attributeType="String" defaultValueString="Макияж"/>
+        <relationship name="client" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Client"/>
+    </entity>
+</model>
