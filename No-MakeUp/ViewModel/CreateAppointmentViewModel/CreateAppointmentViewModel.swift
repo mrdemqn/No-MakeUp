@@ -56,12 +56,12 @@ final class CreateAppointmentViewModel: CreateAppointmentViewModelProtocol {
     private func configureNotifications(preparedNotification: LocalNotification?,
                                         context: NSManagedObjectContext) -> NSSet {
         guard let preparedNotification = preparedNotification else { return [] }
-        let notificationSet: NSSet = []
+        let notificationSet: NSMutableSet = []
         let notification = Notification(context: context)
         notification.title = preparedNotification.title
         notification.body = preparedNotification.body
         notification.notificationTypeRawValue = Int16(preparedNotification.notificationType.rawValue)
-        notificationSet.adding(notification)
+        notificationSet.add(notification)
         return notificationSet
     }
     

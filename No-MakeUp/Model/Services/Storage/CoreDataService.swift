@@ -90,4 +90,9 @@ final class CoreDataService {
             debugPrint(error)
         }
     }
+    
+    func deleteClient(object client: Client) {
+        context.delete(client)
+        saveContext()
+    }
 }

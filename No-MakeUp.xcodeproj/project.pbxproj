@@ -11,12 +11,23 @@
 		E510CFF42B1338E6009A32F1 /* CreateNewAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E510CFF32B1338E6009A32F1 /* CreateNewAppointmentViewController.swift */; };
 		E510CFF72B134876009A32F1 /* AppField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E510CFF62B134876009A32F1 /* AppField.swift */; };
 		E510CFFB2B137136009A32F1 /* CreateAppointmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E510CFFA2B137136009A32F1 /* CreateAppointmentViewModel.swift */; };
+		E5287D4C2B3DCF3F002920C7 /* IndexPathExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5287D4B2B3DCF3F002920C7 /* IndexPathExtensions.swift */; };
 		E53E4B222B123D4800CDDE73 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53E4B212B123D4800CDDE73 /* DateExtensions.swift */; };
 		E546F1B02B19E22E00C314F9 /* DetailsAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E546F1AF2B19E22E00C314F9 /* DetailsAppointmentViewController.swift */; };
+		E54BB8382B2B579500FD4F64 /* FadeAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54BB8372B2B579500FD4F64 /* FadeAnimationController.swift */; };
+		E54BB83A2B2B5B7100FD4F64 /* FadeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54BB8392B2B5B7100FD4F64 /* FadeNavigationController.swift */; };
+		E55B8FBE2B2B929900349CD0 /* TableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55B8FBD2B2B929900349CD0 /* TableViewExtensions.swift */; };
 		E5880BE12B1A30FC003B50E4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5880BE02B1A30FC003B50E4 /* Constants.swift */; };
+		E59347F22B2387B700F129B8 /* ShortcutType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59347F12B2387B700F129B8 /* ShortcutType.swift */; };
 		E59579A42B0BA46600291D36 /* NSManagedObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59579A32B0BA46600291D36 /* NSManagedObjectExtensions.swift */; };
 		E59579A62B0BA4CE00291D36 /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59579A52B0BA4CE00291D36 /* ViewControllerExtensions.swift */; };
 		E59579AD2B0BAE2B00291D36 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59579AC2B0BAE2B00291D36 /* MainViewModel.swift */; };
+		E59ADD4F2B25BE03005D724B /* EditAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59ADD4E2B25BE03005D724B /* EditAppointmentViewController.swift */; };
+		E59ADD512B25BE9B005D724B /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59ADD502B25BE9B005D724B /* UIViewExtensions.swift */; };
+		E59ADD542B25BF2A005D724B /* EditAppointmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59ADD532B25BF2A005D724B /* EditAppointmentViewModel.swift */; };
+		E59ADD572B25C130005D724B /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59ADD562B25C130005D724B /* Validator.swift */; };
+		E59D6E822B274314000A4C4F /* CalendarAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59D6E812B274314000A4C4F /* CalendarAppointmentViewController.swift */; };
+		E59D6E932B27784A000A4C4F /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = E59D6E922B27784A000A4C4F /* FSCalendar */; };
 		E5A6DA002B10E293005FCAE7 /* ClientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A6D9FF2B10E293005FCAE7 /* ClientTableViewCell.swift */; };
 		E5A6DA022B10E2CC005FCAE7 /* NSObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A6DA012B10E2CC005FCAE7 /* NSObjectExtensions.swift */; };
 		E5A6DA052B10E2EE005FCAE7 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A6DA042B10E2EE005FCAE7 /* Localization.swift */; };
@@ -34,6 +45,8 @@
 		E5E107812B161EB300D4A319 /* Notification+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E1077D2B161EB300D4A319 /* Notification+CoreDataProperties.swift */; };
 		E5E107822B161EB300D4A319 /* Client+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E1077E2B161EB300D4A319 /* Client+CoreDataClass.swift */; };
 		E5E107832B161EB300D4A319 /* Client+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E1077F2B161EB300D4A319 /* Client+CoreDataProperties.swift */; };
+		E5E2FB9E2B26DB6D00B606E9 /* FloatingButtonStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E2FB9D2B26DB6D00B606E9 /* FloatingButtonStatus.swift */; };
+		E5E525B42B1C68C500885304 /* MainTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E525B32B1C68C500885304 /* MainTableViewHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,12 +54,22 @@
 		E510CFF32B1338E6009A32F1 /* CreateNewAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewAppointmentViewController.swift; sourceTree = "<group>"; };
 		E510CFF62B134876009A32F1 /* AppField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppField.swift; sourceTree = "<group>"; };
 		E510CFFA2B137136009A32F1 /* CreateAppointmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAppointmentViewModel.swift; sourceTree = "<group>"; };
+		E5287D4B2B3DCF3F002920C7 /* IndexPathExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexPathExtensions.swift; sourceTree = "<group>"; };
 		E53E4B212B123D4800CDDE73 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		E546F1AF2B19E22E00C314F9 /* DetailsAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsAppointmentViewController.swift; sourceTree = "<group>"; };
+		E54BB8372B2B579500FD4F64 /* FadeAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeAnimationController.swift; sourceTree = "<group>"; };
+		E54BB8392B2B5B7100FD4F64 /* FadeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeNavigationController.swift; sourceTree = "<group>"; };
+		E55B8FBD2B2B929900349CD0 /* TableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExtensions.swift; sourceTree = "<group>"; };
 		E5880BE02B1A30FC003B50E4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E59347F12B2387B700F129B8 /* ShortcutType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutType.swift; sourceTree = "<group>"; };
 		E59579A32B0BA46600291D36 /* NSManagedObjectExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectExtensions.swift; sourceTree = "<group>"; };
 		E59579A52B0BA4CE00291D36 /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
 		E59579AC2B0BAE2B00291D36 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		E59ADD4E2B25BE03005D724B /* EditAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAppointmentViewController.swift; sourceTree = "<group>"; };
+		E59ADD502B25BE9B005D724B /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		E59ADD532B25BF2A005D724B /* EditAppointmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAppointmentViewModel.swift; sourceTree = "<group>"; };
+		E59ADD562B25C130005D724B /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		E59D6E812B274314000A4C4F /* CalendarAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarAppointmentViewController.swift; sourceTree = "<group>"; };
 		E5A6D9FF2B10E293005FCAE7 /* ClientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientTableViewCell.swift; sourceTree = "<group>"; };
 		E5A6DA012B10E2CC005FCAE7 /* NSObjectExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtensions.swift; sourceTree = "<group>"; };
 		E5A6DA042B10E2EE005FCAE7 /* Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
@@ -66,6 +89,8 @@
 		E5E1077D2B161EB300D4A319 /* Notification+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		E5E1077E2B161EB300D4A319 /* Client+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Client+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		E5E1077F2B161EB300D4A319 /* Client+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Client+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		E5E2FB9D2B26DB6D00B606E9 /* FloatingButtonStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButtonStatus.swift; sourceTree = "<group>"; };
+		E5E525B32B1C68C500885304 /* MainTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E59D6E932B27784A000A4C4F /* FSCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,9 +128,46 @@
 			path = CreateAppointmentViewModel;
 			sourceTree = "<group>";
 		};
+		E54BB8362B2B578300FD4F64 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				E54BB8372B2B579500FD4F64 /* FadeAnimationController.swift */,
+				E54BB8392B2B5B7100FD4F64 /* FadeNavigationController.swift */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		E59347F02B2387A200F129B8 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				E59347F12B2387B700F129B8 /* ShortcutType.swift */,
+				E5E2FB9D2B26DB6D00B606E9 /* FloatingButtonStatus.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		E59347F32B2388C900F129B8 /* EditAppointmentView */ = {
+			isa = PBXGroup;
+			children = (
+				E59ADD4E2B25BE03005D724B /* EditAppointmentViewController.swift */,
+			);
+			path = EditAppointmentView;
+			sourceTree = "<group>";
+		};
+		E59347F42B2388DC00F129B8 /* CalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				E59D6E812B274314000A4C4F /* CalendarAppointmentViewController.swift */,
+			);
+			path = CalendarView;
+			sourceTree = "<group>";
+		};
 		E59579A12B0BA44800291D36 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E54BB8362B2B578300FD4F64 /* Animations */,
+				E59ADD552B25C11D005D724B /* Validation */,
+				E59347F02B2387A200F129B8 /* Enums */,
 				E510CFF52B13486B009A32F1 /* Views */,
 				E5A6DA032B10E2E0005FCAE7 /* Localizations */,
 				E59579A22B0BA45200291D36 /* Extensions */,
@@ -116,10 +179,13 @@
 		E59579A22B0BA45200291D36 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E59ADD502B25BE9B005D724B /* UIViewExtensions.swift */,
 				E59579A32B0BA46600291D36 /* NSManagedObjectExtensions.swift */,
 				E59579A52B0BA4CE00291D36 /* ViewControllerExtensions.swift */,
 				E5A6DA012B10E2CC005FCAE7 /* NSObjectExtensions.swift */,
 				E53E4B212B123D4800CDDE73 /* DateExtensions.swift */,
+				E55B8FBD2B2B929900349CD0 /* TableViewExtensions.swift */,
+				E5287D4B2B3DCF3F002920C7 /* IndexPathExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -130,6 +196,22 @@
 				E59579AC2B0BAE2B00291D36 /* MainViewModel.swift */,
 			);
 			path = MainViewModel;
+			sourceTree = "<group>";
+		};
+		E59ADD522B25BF1E005D724B /* EditAppointmentViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E59ADD532B25BF2A005D724B /* EditAppointmentViewModel.swift */,
+			);
+			path = EditAppointmentViewModel;
+			sourceTree = "<group>";
+		};
+		E59ADD552B25C11D005D724B /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				E59ADD562B25C130005D724B /* Validator.swift */,
+			);
+			path = Validation;
 			sourceTree = "<group>";
 		};
 		E5A6D9FE2B10E26C005FCAE7 /* TableViewCells */ = {
@@ -185,9 +267,10 @@
 		E5C5B4662B06A44E00BEB6B0 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				E5C5B46B2B06A5EF00BEB6B0 /* CreateAppointment */,
-				E5C5B46A2B06A5D700BEB6B0 /* DetailsAppoinment */,
-				E5C5B4692B06A55600BEB6B0 /* Main */,
+				E59347F32B2388C900F129B8 /* EditAppointmentView */,
+				E5C5B46B2B06A5EF00BEB6B0 /* CreateAppointmentView */,
+				E5C5B46A2B06A5D700BEB6B0 /* DetailsAppoinmentView */,
+				E5C5B4692B06A55600BEB6B0 /* MainView */,
 				E5A6D9FE2B10E26C005FCAE7 /* TableViewCells */,
 			);
 			path = Presentation;
@@ -196,6 +279,7 @@
 		E5C5B4672B06A48D00BEB6B0 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				E59ADD522B25BF1E005D724B /* EditAppointmentViewModel */,
 				E510CFF92B137123009A32F1 /* CreateAppointmentViewModel */,
 				E510CFF82B137112009A32F1 /* DetailsAppointmentViewModel */,
 				E59579AB2B0BAE1900291D36 /* MainViewModel */,
@@ -212,28 +296,30 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		E5C5B4692B06A55600BEB6B0 /* Main */ = {
+		E5C5B4692B06A55600BEB6B0 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				E59347F42B2388DC00F129B8 /* CalendarView */,
 				E5C5B4562B06A3E200BEB6B0 /* MainViewController.swift */,
+				E5E525B32B1C68C500885304 /* MainTableViewHeader.swift */,
 			);
-			path = Main;
+			path = MainView;
 			sourceTree = "<group>";
 		};
-		E5C5B46A2B06A5D700BEB6B0 /* DetailsAppoinment */ = {
+		E5C5B46A2B06A5D700BEB6B0 /* DetailsAppoinmentView */ = {
 			isa = PBXGroup;
 			children = (
 				E546F1AF2B19E22E00C314F9 /* DetailsAppointmentViewController.swift */,
 			);
-			path = DetailsAppoinment;
+			path = DetailsAppoinmentView;
 			sourceTree = "<group>";
 		};
-		E5C5B46B2B06A5EF00BEB6B0 /* CreateAppointment */ = {
+		E5C5B46B2B06A5EF00BEB6B0 /* CreateAppointmentView */ = {
 			isa = PBXGroup;
 			children = (
 				E510CFF32B1338E6009A32F1 /* CreateNewAppointmentViewController.swift */,
 			);
-			path = CreateAppointment;
+			path = CreateAppointmentView;
 			sourceTree = "<group>";
 		};
 		E5C5B46C2B06A72E00BEB6B0 /* Services */ = {
@@ -307,6 +393,7 @@
 			);
 			name = "No-MakeUp";
 			packageProductDependencies = (
+				E59D6E922B27784A000A4C4F /* FSCalendar */,
 			);
 			productName = Instaura;
 			productReference = E5C5B44F2B06A3E200BEB6B0 /* No-MakeUp.app */;
@@ -320,10 +407,11 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1510;
 				TargetAttributes = {
 					E5C5B44E2B06A3E200BEB6B0 = {
 						CreatedOnToolsVersion = 15.0;
+						LastSwiftMigration = 1510;
 					};
 				};
 			};
@@ -338,6 +426,7 @@
 			);
 			mainGroup = E5C5B4462B06A3E100BEB6B0;
 			packageReferences = (
+				E59D6E832B274550000A4C4F /* XCRemoteSwiftPackageReference "FSCalendar" */,
 			);
 			productRefGroup = E5C5B4502B06A3E200BEB6B0 /* Products */;
 			projectDirPath = "";
@@ -369,23 +458,35 @@
 				E5880BE12B1A30FC003B50E4 /* Constants.swift in Sources */,
 				E5C5B4572B06A3E200BEB6B0 /* MainViewController.swift in Sources */,
 				E5C5B4702B06A8AF00BEB6B0 /* CoreDataService.swift in Sources */,
+				E54BB8382B2B579500FD4F64 /* FadeAnimationController.swift in Sources */,
 				E5E107812B161EB300D4A319 /* Notification+CoreDataProperties.swift in Sources */,
+				E5E525B42B1C68C500885304 /* MainTableViewHeader.swift in Sources */,
 				E5E1076B2B161CDF00D4A319 /* LocalNotification.swift in Sources */,
+				E5E2FB9E2B26DB6D00B606E9 /* FloatingButtonStatus.swift in Sources */,
 				E5E107672B161BFC00D4A319 /* NotificationsManager.swift in Sources */,
+				E5287D4C2B3DCF3F002920C7 /* IndexPathExtensions.swift in Sources */,
 				E5A6DA052B10E2EE005FCAE7 /* Localization.swift in Sources */,
 				E59579AD2B0BAE2B00291D36 /* MainViewModel.swift in Sources */,
+				E55B8FBE2B2B929900349CD0 /* TableViewExtensions.swift in Sources */,
+				E59D6E822B274314000A4C4F /* CalendarAppointmentViewController.swift in Sources */,
 				E5DA29FF2B1609AF009D57B0 /* NotificationType.swift in Sources */,
 				E5C5B4532B06A3E200BEB6B0 /* AppDelegate.swift in Sources */,
 				E5C5B4552B06A3E200BEB6B0 /* SceneDelegate.swift in Sources */,
 				E5E1075C2B161AD000D4A319 /* No-MakeUp.xcdatamodeld in Sources */,
 				E5E107822B161EB300D4A319 /* Client+CoreDataClass.swift in Sources */,
+				E59ADD542B25BF2A005D724B /* EditAppointmentViewModel.swift in Sources */,
 				E546F1B02B19E22E00C314F9 /* DetailsAppointmentViewController.swift in Sources */,
 				E5A6DA002B10E293005FCAE7 /* ClientTableViewCell.swift in Sources */,
 				E510CFF72B134876009A32F1 /* AppField.swift in Sources */,
 				E53E4B222B123D4800CDDE73 /* DateExtensions.swift in Sources */,
 				E59579A62B0BA4CE00291D36 /* ViewControllerExtensions.swift in Sources */,
+				E59ADD4F2B25BE03005D724B /* EditAppointmentViewController.swift in Sources */,
 				E5E107832B161EB300D4A319 /* Client+CoreDataProperties.swift in Sources */,
+				E59ADD572B25C130005D724B /* Validator.swift in Sources */,
 				E59579A42B0BA46600291D36 /* NSManagedObjectExtensions.swift in Sources */,
+				E59ADD512B25BE9B005D724B /* UIViewExtensions.swift in Sources */,
+				E59347F22B2387B700F129B8 /* ShortcutType.swift in Sources */,
+				E54BB83A2B2B5B7100FD4F64 /* FadeNavigationController.swift in Sources */,
 				E5E107802B161EB300D4A319 /* Notification+CoreDataClass.swift in Sources */,
 				E510CFFB2B137136009A32F1 /* CreateAppointmentViewModel.swift in Sources */,
 				E510CFF42B1338E6009A32F1 /* CreateNewAppointmentViewController.swift in Sources */,
@@ -412,6 +513,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -475,6 +577,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -531,17 +634,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TCP97C389B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "No-MakeUp/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "No-MakeUp";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
@@ -551,12 +655,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dmitry.No-MakeUp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "No-MakeUp-Distribute-Provisioning";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -567,17 +672,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = TCP97C389B;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "No-MakeUp/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "No-MakeUp";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
@@ -587,7 +693,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dmitry.No-MakeUp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -620,6 +726,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E59D6E832B274550000A4C4F /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E59D6E922B27784A000A4C4F /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E59D6E832B274550000A4C4F /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		E5E1075A2B161AD000D4A319 /* No-MakeUp.xcdatamodeld */ = {

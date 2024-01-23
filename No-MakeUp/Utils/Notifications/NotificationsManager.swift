@@ -44,9 +44,11 @@ final class NotificationsManager: NSObject {
 import UserNotifications
 import CoreData
 
-final class LocalNotificationManager {
+final class LocalNotificationManager: NSObject {
     
     static let shared = LocalNotificationManager()
+    
+    var clientObjectAbsolutePath: String?
     
     let notificationCenter = UNUserNotificationCenter.current()
     
@@ -109,6 +111,10 @@ final class LocalNotificationManager {
         }
     }
     
+    func removeNotification(id identifier: NSManagedObjectID) {
+        notificationCenter.removePendingNotificationRequests(withIdentifiers: ["\(identifier)"])
+    }
+    
     func registerNotifications(notification: LocalNotification,
                                id identifier: NSManagedObjectID) {
         let content = UNMutableNotificationContent()
@@ -118,10 +124,9 @@ final class LocalNotificationManager {
         content.body = notification.body
         content.categoryIdentifier = Constants.appointmentCategory
         content.sound = .defaultCritical
+        content.badge = 1
         content.userInfo = [Constants.clientObjectIDNotificationKey: identifier.uriRepresentation().absoluteString]
         let date =  decreaseDate(of: type, notification.notificationDate)
-        
-        print("Notification Date: \(date)")
         
         let dateInfo = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: date)
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: false)
@@ -161,5 +166,9 @@ final class LocalNotificationManager {
             second: 0
         )
         return calendar.date(from: components) ?? .now
+    }
+    
+    func clearAbsolutePath() {
+        clientObjectAbsolutePath = nil
     }
 }

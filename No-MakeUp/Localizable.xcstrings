@@ -23,6 +23,39 @@
         }
       }
     },
+    "cancel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отмена"
+          }
+        }
+      }
+    },
+    "confirmationDeleteSubtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вы действительно хотите удалить запись клиента"
+          }
+        }
+      }
+    },
+    "confirmationDeleteTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Удалить запись"
+          }
+        }
+      }
+    },
     "date" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -30,6 +63,50 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Дата"
+          }
+        }
+      }
+    },
+    "datePlaceholder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ДД.ММ.ГГГГ"
+          }
+        }
+      }
+    },
+    "delete" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Удалить"
+          }
+        }
+      }
+    },
+    "edit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Редактировать"
+          }
+        }
+      }
+    },
+    "editing" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Правка"
           }
         }
       }
@@ -74,6 +151,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Новая запись"
+          }
+        }
+      }
+    },
+    "noAppointmentsYet" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пока нет записей"
           }
         }
       }
@@ -265,6 +353,28 @@
         }
       }
     },
+    "okAction" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Хорошо"
+          }
+        }
+      }
+    },
+    "questionSymbol" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "?"
+          }
+        }
+      }
+    },
     "reminder" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -276,6 +386,17 @@
         }
       }
     },
+    "tableViewMenuActionsTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вы можете перейти к редактированию или удалить текущую запись."
+          }
+        }
+      }
+    },
     "time" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -283,6 +404,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Время"
+          }
+        }
+      }
+    },
+    "validationErrorSubtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Обязательные поля должны быть заполнены: Имя, Дата, Время."
+          }
+        }
+      }
+    },
+    "validationErrorTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Заполните поля"
           }
         }
       }

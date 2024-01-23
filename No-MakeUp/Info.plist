@@ -19,5 +19,28 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconSymbolName</key>
+			<string>calendar.badge.clock</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>Нажмите, чтобы открыть экран с календарём</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Открыть календарь</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>OpenCalendar</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconSymbolName</key>
+			<string>plus.viewfinder</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>Нажмите, чтобы создать новую запись</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Новая запись</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>CreateAppointment</string>
+		</dict>
+	</array>
 </dict>
 </plist>

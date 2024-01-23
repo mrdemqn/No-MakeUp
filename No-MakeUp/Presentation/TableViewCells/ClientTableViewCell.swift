@@ -16,6 +16,8 @@ final class ClientTableViewCell: UITableViewCell {
     private let timeLabel = UILabel()
     private let nameLabel = UILabel()
     
+    var numberOfRowsInSection: Int = 0
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureLayout()
@@ -23,12 +25,47 @@ final class ClientTableViewCell: UITableViewCell {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
+        configureLayout()
+        prepareLayout()
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        if selected {
+            UIView.animate(withDuration: 0.1, animations: {
+                self.transform = CGAffineTransform(scaleX: 0.97, y: 0.97)
+            }, completion: { finished in
+                UIView.animate(withDuration: 0.1) {
+                    self.transform = .identity
+                }
+            })
+        }
     }
     
     func setupCell(model: ClientTableViewCellModel) {
-        timeLabel.text = "Time: \(model.time)| Date: \(model.date)"
+        timeLabel.text = "\(model.date) | \(model.time)"
         nameLabel.text = model.name
+    }
+    
+    func configureCellCorners(indexPath: IndexPath) {
+        if numberOfRowsInSection == 1 {
+            backgroundCellView.layer.cornerRadius = 10
+            backgroundCellView.layer.maskedCorners = [.layerMinXMinYCorner,
+                                                      .layerMaxXMinYCorner,
+                                                      .layerMinXMaxYCorner,
+                                                      .layerMaxXMaxYCorner]
+        } else if indexPath.isFirstRow {
+            backgroundCellView.layer.cornerRadius = 10
+            backgroundCellView.layer.maskedCorners = [.layerMinXMinYCorner,
+                                                      .layerMaxXMinYCorner]
+        } else if indexPath.row == numberOfRowsInSection - 1 {
+            backgroundCellView.layer.cornerRadius = 10
+            backgroundCellView.layer.maskedCorners = [.layerMinXMaxYCorner,
+                                                      .layerMaxXMaxYCorner]
+        } else {
+            backgroundCellView.layer.cornerRadius = 0
+        }
     }
 }
 
@@ -36,69 +73,52 @@ private extension ClientTableViewCell {
     
     func configureLayout() {
         configureSuperView()
-        configureBackgroundCellView()
         configureTimeLabel()
         configureNameLabel()
     }
     
     func prepareLayout() {
-        prepareBackgroundCellView()
-        prepareTimeLabel()
-        prepareNameLabel()
+        prepareLabels()
     }
     
     func configureSuperView() {
         backgroundColor = .clear
-        selectionStyle = .none
-    }
-    
-    func configureBackgroundCellView() {
-        backgroundCellView.translatesAutoresizingMaskIntoConstraints = false
-        backgroundCellView.backgroundColor = .darkGray
-        backgroundCellView.layer.cornerRadius = 20
-    }
-    
-    func configureTimeLabel() {
-        timeLabel.translatesAutoresizingMaskIntoConstraints = false
-        timeLabel.font = .systemFont(ofSize: 12)
+        separatorInset = .zero
+        
+        contentView.backgroundColor = .sectionBackground
     }
     
     func configureNameLabel() {
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.font = .systemFont(ofSize: 10)
-        nameLabel.numberOfLines = 0
+        nameLabel.font = .systemFont(ofSize: 14, weight: .bold)
+        nameLabel.textColor = .white
+        nameLabel.numberOfLines = 1
+        nameLabel.lineBreakMode = .byTruncatingTail
     }
     
-    func prepareBackgroundCellView() {
-        addSubview(backgroundCellView)
-        
-        NSLayoutConstraint.activate([
-            backgroundCellView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-            backgroundCellView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
-            backgroundCellView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
-            backgroundCellView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            backgroundCellView.heightAnchor.constraint(equalToConstant: 100),
-        ])
+    func configureTimeLabel() {
+        timeLabel.translatesAutoresizingMaskIntoConstraints = false
+        timeLabel.font = .systemFont(ofSize: 14, weight: .regular)
+        timeLabel.textColor = .lightGray
+        timeLabel.numberOfLines = 1
+        nameLabel.lineBreakMode = .byTruncatingTail
     }
     
-    func prepareTimeLabel() {
-        backgroundCellView.addSubview(timeLabel)
+    func prepareLabels() {
+        contentView.addSubview(nameLabel)
+        contentView.addSubview(timeLabel)
         
         NSLayoutConstraint.activate([
-            timeLabel.topAnchor.constraint(equalTo: backgroundCellView.topAnchor, constant: 10),
-            timeLabel.leadingAnchor.constraint(equalTo: backgroundCellView.leadingAnchor, constant: 15),
-            timeLabel.bottomAnchor.constraint(equalTo: backgroundCellView.bottomAnchor, constant: -10),
-        ])
-    }
-    
-    func prepareNameLabel() {
-        backgroundCellView.addSubview(nameLabel)
-        
-        NSLayoutConstraint.activate([
-            nameLabel.topAnchor.constraint(equalTo: backgroundCellView.topAnchor, constant: 10),
-            nameLabel.leadingAnchor.constraint(equalTo: timeLabel.trailingAnchor, constant: 20),
-            nameLabel.trailingAnchor.constraint(equalTo: backgroundCellView.trailingAnchor, constant: -15),
-            nameLabel.bottomAnchor.constraint(equalTo: backgroundCellView.bottomAnchor, constant: -10),
+            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
+            nameLabel.bottomAnchor.constraint(equalTo: timeLabel.topAnchor),
+            nameLabel.heightAnchor.constraint(equalToConstant: 20),
+            
+            timeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            timeLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            timeLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+            timeLabel.heightAnchor.constraint(equalToConstant: 20),
         ])
     }
 }

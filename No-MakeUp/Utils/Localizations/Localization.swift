@@ -21,6 +21,13 @@ enum Localization: String {
     case time = "time"
     case reminder = "reminder"
     case notificationsIsAbsent = "notificationsIsAbsent"
+    case questionSymbol = "questionSymbol"
+    case delete = "delete"
+    case cancel = "cancel"
+    case editing = "editing"
+    case okAction = "okAction"
+    case datePlaceholder = "datePlaceholder"
+    case edit = "edit"
     
     case notificationAppointmentTitle = "notificationAppointmentTitle"
     
@@ -38,4 +45,14 @@ enum Localization: String {
     case notificationBodyOneHour = "notificationBodyOneHour"
     case notificationBodyTwoHour = "notificationBodyTwoHour"
     case notificationBodyOneDay = "notificationBodyOneDay"
+    
+    case confirmationDeleteTitle = "confirmationDeleteTitle"
+    case confirmationDeleteSubtitle = "confirmationDeleteSubtitle"
+    
+    case validationErrorTitle = "validationErrorTitle"
+    case validationErrorSubtitle = "validationErrorSubtitle"
+    
+    case tableViewMenuActionsTitle = "tableViewMenuActionsTitle"
+    
+    case noAppointmentsYet = "noAppointmentsYet"
 }

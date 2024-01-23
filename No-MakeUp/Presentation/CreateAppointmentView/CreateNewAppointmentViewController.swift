@@ -95,19 +95,20 @@ final class CreateNewAppointmentViewController: UIViewController, UIGestureRecog
     }
     
     @objc private func saveNewAppointment() {
-        guard let name = nameTextField.text, !name.isEmpty,
-              let instagram = instagramTextField.text, !instagram.isEmpty,
-              let notes = notesTextView.text, !notes.isEmpty,
+        guard let name = nameTextField.text, !name.trimmingCharacters(in: .whitespaces).isEmpty,
               let date = appointmentDate,
-              let time = appointmentTime else { return }
+              let time = appointmentTime else { return validate() }
+        let instagram = instagramTextField.text?.trimmingCharacters(in: .whitespaces)
+        let notes = notesTextView.text?.trimmingCharacters(in: .whitespaces)
+        
         let content = NotificationsManager().fetchNotificationContent(of: notification?.notificationType ?? .fiveMinutes,
-                                                                      clientName: name)
+                                                                      clientName: name.trimmingCharacters(in: .whitespaces))
         notification?.notificationDate = date.dateWithTime(with: time)
         notification?.title = content.title
         notification?.body = content.body
         viewModel.createAppointment(date: date.dateAppointment,
                                     time: time,
-                                    name: name,
+                                    name: name.trimmingCharacters(in: .whitespaces),
                                     instagram: instagram,
                                     notes: notes,
                                     notification: notification) {
@@ -123,6 +124,7 @@ final class CreateNewAppointmentViewController: UIViewController, UIGestureRecog
     
     @objc private func showHideCalendar() {
         discardFocus()
+
         UIView.animate(withDuration: 0.3) { [unowned self] in
             if showCalendar {
                 calendarConstraint = backgroundCalendarView.heightAnchor.constraint(equalToConstant: 0)
@@ -131,8 +133,21 @@ final class CreateNewAppointmentViewController: UIViewController, UIGestureRecog
             } else {
                 backgroundCalendarView.removeConstraint(calendarConstraint)
                 showCalendar = true
+                dateView.layer.maskedCorners = [.layerMinXMinYCorner,
+                                                .layerMaxXMinYCorner]
+                backgroundCalendarView.layer.cornerRadius = 10
+                backgroundCalendarView.layer.maskedCorners = [.layerMinXMaxYCorner,
+                                                              .layerMaxXMaxYCorner]
             }
             view.layoutIfNeeded()
+        } completion: { [unowned self] isCompleted in
+            if !showCalendar {
+                dateView.layer.maskedCorners = [.layerMinXMinYCorner,
+                                                .layerMaxXMinYCorner,
+                                                .layerMinXMaxYCorner,
+                                                .layerMaxXMaxYCorner]
+                backgroundCalendarView.layer.maskedCorners = []
+            }
         }
     }
     
@@ -147,8 +162,21 @@ final class CreateNewAppointmentViewController: UIViewController, UIGestureRecog
                 timeConstraint.constant = 200
                 timePicker.isHidden = false
                 showTime = true
+                timeView.layer.maskedCorners = [.layerMinXMinYCorner,
+                                                .layerMaxXMinYCorner]
+                backgroundTimeView.layer.cornerRadius = 10
+                backgroundTimeView.layer.maskedCorners = [.layerMinXMaxYCorner,
+                                                              .layerMaxXMaxYCorner]
             }
             view.layoutIfNeeded()
+        } completion: { [unowned self] isCompleted in
+            if !showTime {
+                timeView.layer.maskedCorners = [.layerMinXMinYCorner,
+                                                .layerMaxXMinYCorner,
+                                                .layerMinXMaxYCorner,
+                                                .layerMaxXMaxYCorner]
+                backgroundTimeView.layer.maskedCorners = []
+            }
         }
     }
     
@@ -166,6 +194,23 @@ final class CreateNewAppointmentViewController: UIViewController, UIGestureRecog
                                              body: content.body,
                                              notificationType: type)
         notificationSubtitleLabel.text = subtitle
+    }
+    
+    private func validate() {
+        let name = nameTextField.text?.trimmingCharacters(in: .whitespaces) ?? ""
+        
+        if name.isEmpty {
+            nameTextField.fadeTransition()
+            nameTextField.layer.borderColor = UIColor.systemRed.cgColor
+        }
+        
+        if appointmentDate == nil {
+            dateView.fadeTransition()
+            dateView.layer.borderWidth = 0.5
+            dateView.layer.borderColor = UIColor.systemRed.cgColor
+        }
+        
+        showValidationAlert()
     }
     
     deinit {
@@ -293,7 +338,13 @@ extension CreateNewAppointmentViewController {
         
         dateView.backgroundColor = .sectionBackground
         
-        dateLabel.text = Date.now.dateFormat
+        dateView.layer.cornerRadius = 10
+        dateView.layer.maskedCorners = [.layerMinXMinYCorner,
+                                        .layerMaxXMinYCorner,
+                                        .layerMinXMaxYCorner,
+                                        .layerMaxXMaxYCorner]
+        
+        dateLabel.text = localized(of: .datePlaceholder)
         
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(showHideCalendar))
         dateView.addGestureRecognizer(recognizer)
@@ -305,7 +356,14 @@ extension CreateNewAppointmentViewController {
         
         timeView.backgroundColor = .sectionBackground
         
-        timeLabel.text = Date.now.timeFormat
+        timeView.layer.cornerRadius = 10
+        timeView.layer.maskedCorners = [.layerMinXMinYCorner,
+                                        .layerMaxXMinYCorner,
+                                        .layerMinXMaxYCorner,
+                                        .layerMaxXMaxYCorner]
+        
+        appointmentTime = Date.startTimePlaceholder
+        timeLabel.text = appointmentTime?.timeFormat
         
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(showHideTime))
         timeView.addGestureRecognizer(recognizer)
@@ -361,6 +419,12 @@ extension CreateNewAppointmentViewController {
         notificationImageView.translatesAutoresizingMaskIntoConstraints = false
         
         notificationView.backgroundColor = .sectionBackground
+        
+        notificationView.layer.cornerRadius = 10
+        notificationView.layer.maskedCorners = [.layerMinXMinYCorner,
+                                        .layerMaxXMinYCorner,
+                                        .layerMinXMaxYCorner,
+                                        .layerMaxXMaxYCorner]
         let interaction = UIContextMenuInteraction(delegate: self)
         notificationView.addInteraction(interaction)
         
@@ -438,7 +502,7 @@ extension CreateNewAppointmentViewController {
             dateView.topAnchor.constraint(equalTo: notesTextView.bottomAnchor, constant: 10),
             dateView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
             dateView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
-            dateView.heightAnchor.constraint(equalToConstant: 40),
+            dateView.heightAnchor.constraint(equalToConstant: 50),
             
             dateLabel.topAnchor.constraint(equalTo: dateView.topAnchor, constant: 10),
             dateLabel.leadingAnchor.constraint(equalTo: dateView.leadingAnchor, constant: 10),
@@ -474,7 +538,7 @@ extension CreateNewAppointmentViewController {
             timeView.topAnchor.constraint(equalTo: backgroundCalendarView.bottomAnchor, constant: 10),
             timeView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
             timeView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
-            timeView.heightAnchor.constraint(equalToConstant: 40),
+            timeView.heightAnchor.constraint(equalToConstant: 50),
             
             timeLabel.topAnchor.constraint(equalTo: timeView.topAnchor, constant: 10),
             timeLabel.leadingAnchor.constraint(equalTo: timeView.leadingAnchor, constant: 10),
@@ -513,7 +577,7 @@ extension CreateNewAppointmentViewController {
             notificationView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
             notificationView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
             notificationView.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor, constant: -20),
-            notificationView.heightAnchor.constraint(equalToConstant: 40),
+            notificationView.heightAnchor.constraint(equalToConstant: 50),
             
             notificationTitleLabel.topAnchor.constraint(equalTo: notificationView.topAnchor, constant: 10),
             notificationTitleLabel.leadingAnchor.constraint(equalTo: notificationView.leadingAnchor, constant: 10),
@@ -611,19 +675,5 @@ extension CreateNewAppointmentViewController: UIContextMenuInteractionDelegate {
             
             return UIMenu(title: localized(of: .notificationsMenuTitle), children: menuElements)
         })
-    }
-    
-    
-}
-
-
-extension UIView {
-    
-    func fadeTransition(_ duration: CFTimeInterval = 0.25) {
-        let animation = CATransition()
-        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
-        animation.type = CATransitionType.fade
-        animation.duration = duration
-        layer.add(animation, forKey: CATransitionType.fade.rawValue)
     }
 }

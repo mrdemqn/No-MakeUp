@@ -65,7 +65,10 @@ extension DetailsAppointmentViewController {
 extension DetailsAppointmentViewController {
     
     @objc private func editAppointment() {
-        
+        let controller = EditAppointmentViewController()
+        controller.client = client
+        controller.updateClientClosure = updateClient
+        push(of: controller)
     }
     
     @objc private func handleInstagramLink() {
@@ -82,6 +85,40 @@ extension DetailsAppointmentViewController {
         separate.backgroundColor = .darkGray
         
         return separate
+    }
+    
+    private func updateClient(updatedClient: Client) {
+        nameLabel.text = updatedClient.name
+        
+        if let instagram = updatedClient.instagram {
+            instagramLabel.text = "@\(instagram)".lowercased()
+            let recognizer = UITapGestureRecognizer(target: self,
+                                                    action: #selector(handleInstagramLink))
+            instagramLabel.addGestureRecognizer(recognizer)
+        }
+        if let notes = updatedClient.notes {
+            notesLabel.text = notes
+        }
+        
+        dateLabel.text = updatedClient.makeUpAppointmentDate?.dateFormat
+        timeLabel.text = updatedClient.makeUpAppointmentTime?.timeFormat
+        
+        if !updatedClient.notificationsArray.isEmpty {
+            guard let type = updatedClient.notificationsArray.first?.notificationType else { return }
+            notificationLabel.text = NotificationsManager().fetchNotificationSubtitle(of: type)
+        } else {
+            notificationLabel.text = localized(of: .notificationsIsAbsent)
+        }
+        
+        if !updatedClient.notificationsArray.isEmpty {
+            let configuration = UIImage.SymbolConfiguration(paletteColors: [.white, .systemYellow])
+            let image = UIImage(systemName: "bell.badge", withConfiguration: configuration)
+            notificationImageView.image = image
+        } else {
+            let configuration = UIImage.SymbolConfiguration(paletteColors: [.white, .systemYellow])
+            let image = UIImage(systemName: "bell.badge.slash", withConfiguration: configuration)
+            notificationImageView.image = image
+        }
     }
 }
 
@@ -222,7 +259,7 @@ extension DetailsAppointmentViewController {
         
         if !client.notificationsArray.isEmpty {
             let configuration = UIImage.SymbolConfiguration(paletteColors: [.white, .systemYellow])
-            let image = UIImage(systemName: "bell.badge")
+            let image = UIImage(systemName: "bell.badge", withConfiguration: configuration)
             notificationImageView.image = image
         } else {
             let configuration = UIImage.SymbolConfiguration(paletteColors: [.white, .systemYellow])

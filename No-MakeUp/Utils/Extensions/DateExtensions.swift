@@ -12,6 +12,19 @@ extension Date {
     var timeOnly: DateComponents { Calendar.current.dateComponents([.hour, .minute], from: self) }
     var fullDate: DateComponents { Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: self) }
     
+    var oldDate: Date {
+        let components = DateComponents(
+            timeZone: TimeZone(secondsFromGMT: +3),
+            year: 1970,
+            month: 1,
+            day: 1,
+            hour: 0,
+            minute: 0,
+            second: 0
+        )
+        return Calendar(identifier: .gregorian).date(from: components) ?? .now
+    }
+    
     var dateAppointment: Date {
         let component = self.dateOnly
         let calendar = Calendar(identifier: .gregorian)
@@ -41,6 +54,19 @@ extension Date {
         return calendar.date(from: components) ?? .now
     }
     
+    static var startTimePlaceholder: Date {
+        let component = Date.now.fullDate
+        let calendar = Calendar(identifier: .gregorian)
+        let components = DateComponents(
+            year: component.year,
+            month: component.month,
+            day: component.day,
+            hour: 10,
+            minute: 0,
+            second: 0
+        )
+        return calendar.date(from: components) ?? .now
+    }
     
     var timeFormat: String {
         let formatter = DateFormatter()
